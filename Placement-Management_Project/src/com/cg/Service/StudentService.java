@@ -2,6 +2,7 @@ package com.cg.Service;
 
 import com.cg.Entities.Student;
 
+
 public interface StudentService {
 	
 	public abstract Student addStudent(Student student);
@@ -9,6 +10,7 @@ public interface StudentService {
 	public abstract boolean deleteStudent(int id);
 	public abstract Student searchStudentById(int id);
 	public abstract Student searchStudentByHallTicketNo(int hallTicketNo);
+	
 	
 	
 }

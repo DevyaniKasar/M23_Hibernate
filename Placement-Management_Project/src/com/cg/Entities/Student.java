@@ -5,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -29,8 +28,7 @@ public class Student {
 	@JoinColumn(name="Cert_Id")
 	private  Certificate certificate;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
-	private College college;
+
 	
 	//setters and getters method for all the variable which are private
 

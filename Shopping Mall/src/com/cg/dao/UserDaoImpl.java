@@ -1,29 +1,22 @@
-package com.cg.Dao;
+package com.cg.dao;
 
 import javax.persistence.EntityManager;
 
-import com.cg.Entities.User;
+import com.cg.entities.User;
 
-    public class UserDaoImpl implements UserDao
-    {
-     private EntityManager em;
-	
-	
-
-	public UserDaoImpl() {
-		super();
-		em=JPAUtil.getEntityManager();
-	}
-
-
-
+public class UserDaoImpl  implements UserDao
+{
+    private EntityManager em ;
+    
+    public UserDaoImpl() {
+    	super();
+    	em=JPAUtil.getEntityManager();
+    }
 	@Override
-	public User addUser(User user) {
+	public User addNewUser(User user) {
 		em.persist(user);
 		return user;
 	}
-
-
 
 	@Override
 	public User updateUser(User user) {
@@ -31,26 +24,22 @@ import com.cg.Entities.User;
 		return user;
 	}
 
-
-
 	@Override
-	public boolean deleteUser(int user_id) {
-		em.remove(user_id);
-		return false;
+	public User deleteUser(long User_Id) {
+		em.remove(User_Id);
+		return null;
 	}
-
-
 
 	@Override
 	public void commitTransaction() {
 		em.getTransaction().commit();
+		
 	}
-
-
 
 	@Override
 	public void beginTransaction() {
 		em.getTransaction().begin();
 		
 	}
+
 }

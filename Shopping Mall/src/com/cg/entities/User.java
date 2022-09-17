@@ -1,4 +1,4 @@
-package com.cg.Entities;
+package com.cg.entities;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -7,28 +7,32 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
+
 @Entity
 @Table(name="User")
-public class User {
+
+public class User
+{
+	@Id
+	private int User_Id;
+	private String name;
+	private String type;
+	private String password;
 	
-	  @Id
-	  
-	  private long user_id;
-      private String name;
-      private String type;
-      private String password;
-      
-      @OneToOne(cascade=CascadeType.ALL)
-      @JoinColumn(name="Admin_Id")
-      private  Admin admin;
-      
-      
-      //Getter And Setter Method
-	public long getUser_id() {
-		return user_id;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="Admin_id")
+	private Admin admin;
+	
+
+	
+	//getter and Setter
+	public int getUser_Id() {
+		return User_Id;
 	}
-	public void setUser_id(long user_id) {
-		this.user_id = user_id;
+	public void setUser_Id(int user_Id) {
+		User_Id = user_Id;
 	}
 	public String getName() {
 		return name;
@@ -58,8 +62,6 @@ public class User {
 	}
 	
 	
-      
-      
-      
-      
+	
+
 }

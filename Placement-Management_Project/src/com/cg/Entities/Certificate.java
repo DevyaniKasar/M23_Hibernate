@@ -1,10 +1,9 @@
 package com.cg.Entities;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,8 +21,7 @@ public class Certificate {
 	@OneToOne(mappedBy="certificate")
 	private Student student;
 	
-	@ManyToOne (cascade=CascadeType.ALL)
-	private College college;
+	
 	
 	
 	//getters and setters

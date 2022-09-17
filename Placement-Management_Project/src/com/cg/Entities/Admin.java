@@ -1,35 +1,33 @@
 package com.cg.Entities;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Admin")
-public class Admin 
-{
-	@Id
-	private int id;
-	private String name;
-	private String password;
+public class Admin {
 	
-	//@OneToOne method for connecting user and admin table
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="User_id")
-	private User user;
+	@Id
+	@Column(name="Admin_Id")
+	 private long Admin_id;
+	 private String name;
+	 private String password;
+	 
+	 @OneToOne(mappedBy="Admin")
+		private User user;
 
-	//Getter and Setter Method
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+     //Getter And Setter
+    public long getAdmin_id() {
+			return Admin_id;
+		}
 
+		public void setAdmin_id(long admin_id) {
+			Admin_id = admin_id;
+		}
 	public String getName() {
 		return name;
 	}
@@ -45,7 +43,7 @@ public class Admin
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+   //For User
 	public User getUser() {
 		return user;
 	}
@@ -53,6 +51,12 @@ public class Admin
 	public void setUser(User user) {
 		this.user = user;
 	}
+
 	
 	
+	
+
+	 
+	 
+
 }

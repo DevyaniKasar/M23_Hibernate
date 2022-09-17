@@ -1,23 +1,21 @@
-package com.cg.Service;
+package com.cg.service;
 
-
-import com.cg.Dao.UserDao;
-import com.cg.Dao.UserDaoImpl;
-import com.cg.Entities.User;
+import com.cg.dao.UserDao;
+import com.cg.dao.UserDaoImpl;
+import com.cg.entities.User;
 
 public class UserServiceImpl implements UserService
 {
-	private UserDao dao;
-	
-	public UserServiceImpl() {
-		super();
-		dao=new UserDaoImpl();
-	}
+    private UserDao dao;
+    public UserServiceImpl() {
+    	super();
+    	dao = new UserDaoImpl();
+    }
 
 	@Override
-	public User addUser(User user) {
+	public User addNewUser(User user) {
 		dao.beginTransaction();
-		dao.addUser(user);
+		dao.addNewUser(user);
 		dao.commitTransaction();
 		return user;
 	}
@@ -31,16 +29,17 @@ public class UserServiceImpl implements UserService
 	}
 
 	@Override
-	public User loginUser(User user) {
+	public User login(User user) {
 		
 		return null;
 	}
 
 	@Override
-	public boolean logoutUser(int user_id) {
+	public boolean logout() {
 		
 		return false;
 	}
-
+    
 	
+
 }
