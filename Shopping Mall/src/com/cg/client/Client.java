@@ -2,11 +2,17 @@ package com.cg.client;
 
 
 import com.cg.entities.Admin;
+import com.cg.entities.Customer;
 import com.cg.entities.Employee;
+import com.cg.entities.Order;
 import com.cg.entities.Shop;
 import com.cg.entities.User;
+import com.cg.service.CustomerService;
+import com.cg.service.CustomerServiceImpl;
 import com.cg.service.EmployeeService;
 import com.cg.service.EmployeeServiceImpl;
+import com.cg.service.OrderService;
+import com.cg.service.OrderServiceImpl;
 import com.cg.service.ShopService;
 import com.cg.service.ShopServiceImpl;
 import com.cg.service.UserService;
@@ -61,6 +67,25 @@ public class Client
 		shopService.updateShop(shop);
 		
 		System.out.println("Data Is Updated");
+		
+		Customer customer= new Customer();
+		CustomerService customerService = new CustomerServiceImpl();
+		customer.setCust_id(65);
+		customer.setCust_name("Gaurav Patil");
+		customer.setPhone("9826713405");
+		customer.setEmail("ajay988@gmail.com");
+		
+		Order order = new Order();
+		OrderService orderService = new OrderServiceImpl();
+		order.setOrder_id(7985623);
+		order.setTotal(10500.02f);
+		order.setLdt(null);
+		order.setPaymentMode("Online");
+		
+		orderService.updateOrder(order);
+		customerService.updateCustomer(customer);
+		
+		System.out.println("Order Is Updated");
 		
 		
 	}
