@@ -18,7 +18,6 @@ public class Employee
     private String name;
     private double LocalDate;
 	private float salary;
-    private String address;
     private String  designation;
     
     
@@ -51,12 +50,6 @@ public class Employee
 	}
 	public void setSalary(float salary) {
 		this.salary = salary;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
 	}
 	public String getDesignation() {
 		return designation;

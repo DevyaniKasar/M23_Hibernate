@@ -25,6 +25,8 @@ public class User
 	@JoinColumn(name="Admin_id")
 	private Admin admin;
 	
+	
+	
 
 	
 	//getter and Setter
@@ -60,6 +62,7 @@ public class User
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
+
 	
 	
 	

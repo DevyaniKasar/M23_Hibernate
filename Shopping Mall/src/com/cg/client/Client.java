@@ -38,8 +38,7 @@ public class Client
 		
 		userService.addNewUser(user);
 		
-		
-		
+		System.out.println("Data Is Inserted");
 		
 		Shop shop= new Shop();
 		ShopService shopService = new ShopServiceImpl();
@@ -55,16 +54,13 @@ public class Client
 		employee.setName("Gaurav");
 		employee.setLocalDate(12);
 		employee.setSalary(30000);
-		employee.setDesignation("Manager");
+		employee.setDesignation("Supervisor");
+		
 		
 	    employeeService.updateEmployee(employee);
 		shopService.updateShop(shop);
 		
-		
-		
-		
-		
-		System.out.println("Data Is Inserted");
+		System.out.println("Data Is Updated");
 		
 		
 	}
